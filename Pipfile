@@ -5,6 +5,10 @@ name = "pypi"
 
 [packages]
 django = "==4.2"
+django-cors-headers = "*"
+djangorestframework = "*"
+drf-spectacular = "*"
+PyJWT = "*"
 
 [dev-packages]
 
