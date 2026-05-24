@@ -17,4 +17,7 @@ USER user
 ENV HOME=/home/user
 ENV PATH=/home/user/.local/bin:$PATH
 
-CMD ["gunicorn", "capstone.wsgi:application", "--bind", "0.0.0.0:${PORT}"]
+# Hugging Face uses port 7860
+EXPOSE 7860
+
+CMD ["gunicorn", "capstone.wsgi:application", "--bind", "0.0.0.0:7860", "--workers", "2", "--timeout", "120", "--keep-alive", "5"]
