@@ -10,6 +10,9 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 
 COPY . .
 
+# Collect static files
+RUN python manage.py collectstatic --noinput --clear
+
 # Create non-root user for Hugging Face
 RUN useradd -m -u 1000 user
 USER user
